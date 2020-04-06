@@ -45,8 +45,6 @@ const updateQuantity = ()=>{
     document.querySelector('.check-out').style.display="block"
     document.querySelector('.total-price').style.display="block"
     document.getElementById('shopping-cart-total').innerHTML= totalPrice.toFixed(2)
-    
-
 
 }
 
@@ -55,6 +53,7 @@ productContainer.addEventListener('click', (e)=>{
     if (e.target.classList.value === "product-cart"){
         let productID = e.target.parentNode.parentNode.id
         cartQuantity ++
+        document.querySelector('.cart-icon-container').insertAdjacentHTML('beforeend', `<span class="cart-quantity">${cartQuantity}</span>`)
         document.body.insertAdjacentHTML('beforeend', `    <div class="modal-add-to-cart">
         <p> Item added</p>
     </div>`)
