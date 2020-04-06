@@ -17,9 +17,9 @@ pageContainer.addEventListener('click', (e)=>{
 
 
 const updateQuantity = ()=>{
-    console.log(cartQuantity)
     document.querySelector('.shopping-cart-content-container').innerHTML=""
     let totalPrice = 0
+    updateCartIcon()
     if (cartQuantity == 0){
         document.querySelector('.shopping-cart-content-container').insertAdjacentHTML('beforeend', ` <div class="message-container"><h3 class="message"> Your cart is currently empty </h3></div>`)
         document.querySelector('.check-out').style.display="none"
@@ -53,8 +53,8 @@ productContainer.addEventListener('click', (e)=>{
     if (e.target.classList.value === "product-cart"){
         let productID = e.target.parentNode.parentNode.id
         cartQuantity ++
-        document.querySelector('.cart-icon-container').insertAdjacentHTML('beforeend', `<span class="cart-quantity">${cartQuantity}</span>`)
-        document.body.insertAdjacentHTML('beforeend', `    <div class="modal-add-to-cart">
+        updateCartIcon()
+        document.body.insertAdjacentHTML('beforeend', ` <div class="modal-add-to-cart">
         <p> Item added</p>
     </div>`)
         product.forEach((e)=>{
@@ -86,10 +86,20 @@ shoppingCartModal.addEventListener('click', (e)=>{
         })
        }
        updateQuantity()
+       updateCartIcon()
     }
 })
 
-
+const updateCartIcon = ()=>{
+    if (cartQuantity == 0){
+        return document.querySelector('.cart-quantity').style.display="none"
+    }
+    if (cartQuantity > 0){
+        document.querySelector('.cart-quantity').style.display="block"
+        document.querySelector('.cart-quantity').innerHTML= cartQuantity
+    }
+ 
+}
 
 let product = []
 
@@ -117,6 +127,7 @@ product.push({
 
 
 const init = (product)=>{
+    document.querySelector('.cart-quantity').style.display="none"
     product.forEach((e)=>{
         let output = ` <div class="product-card" id="${e.id}">
         <div class="product-image-container">
