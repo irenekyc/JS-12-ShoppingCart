@@ -1,11 +1,13 @@
 const productContainer = document.querySelector('.product-container')
 const pageContainer = document.querySelector('.page-container')
 const shoppingCartModal= document.querySelector('.shopping-cart-page-container')
+const cartAddConfirm = document.querySelector('.modal-add-to-cart')
 let cartQuantity = 0
 
 pageContainer.addEventListener('click', (e)=>{
     if (e.target.classList.value === "cart-icon-container" || e.target.classList.value === "fas fa-shopping-cart" ){
        shoppingCartModal.classList.add('open-shopping-modal')
+
        updateQuantity()
     } else {
         shoppingCartModal.classList.remove('open-shopping-modal')}
@@ -53,6 +55,9 @@ productContainer.addEventListener('click', (e)=>{
     if (e.target.classList.value === "product-cart"){
         let productID = e.target.parentNode.parentNode.id
         cartQuantity ++
+        document.body.insertAdjacentHTML('beforeend', `    <div class="modal-add-to-cart">
+        <p> Item added</p>
+    </div>`)
         product.forEach((e)=>{
             if (e.id === productID){
                 e.quantity++
