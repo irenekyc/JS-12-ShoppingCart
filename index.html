@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JS-12-ShoppingCart</title>
-    <script src="https://kit.fontawesome.com/a1e74affc8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="shopping-cart-solid.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/a1e74affc8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="shopping-cart-solid.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="web-container">
-        <div class="page-container">
-            <div class="header">
-                <div class="cart-icon-container">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-quantity"></span>
-                </div>
-            </div>
-             <div class="product-session">
-                 <div class="product-container">
-                    
-                 </div>
-            </div>
-    </div>
-
-    <div class="shopping-cart-page-container">
-        <div class="shopping-cart-header">
-            Your cart:
+      <div class="modal-add-to-cart">
+        <p>Item added</p>
+      </div>
+      <div class="page-container">
+        <div class="header">
+          <div class="cart-icon-container">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-quantity"></span>
+          </div>
         </div>
-        <div class="shopping-cart-content-container">
-
-       
-
+        <div class="product-session">
+          <div class="product-container"></div>
         </div>
+      </div>
+
+      <div class="shopping-cart-page-container">
+        <div class="shopping-cart-header">Your cart:</div>
+        <div class="shopping-cart-content-container"></div>
         <div class="shopping-cart-below">
-            <p class="total-price"> Total: $ <span id="shopping-cart-total"></span></p>
-            <p class="check-out"> Checkout </p>
-            <p class="close-modal"> Continue Shopping </p>
+          <p class="total-price">
+            Total: $ <span id="shopping-cart-total"></span>
+          </p>
+          <p class="check-out">Checkout</p>
+          <p class="close-modal">Continue Shopping</p>
         </div>
+      </div>
     </div>
-</div>
-<script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
