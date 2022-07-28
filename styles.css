@@ -114,6 +114,7 @@
     width:300px;
     height:350px;
    margin:25px;
+    z-index:9999;
 
 }
 .product-image-container{
